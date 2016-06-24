@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-transform-move-comments-to-top",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Move comments to top of the file",
   "repository": "https://github.com/chentsulin/babel-plugin-transform-move-comments-to-top",
   "license": "MIT",
