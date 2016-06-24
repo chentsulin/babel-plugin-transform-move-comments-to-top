@@ -6,8 +6,8 @@ export default function ({ types: t }) {
         let comments = [];
         path.traverse({
           enter(path) {
-            if (path.node.trailingComments) {
-              comments = comments.concat(path.node.trailingComments);
+            if (path.node.leadingComments) {
+              comments = comments.concat(path.node.leadingComments);
             }
             t.removeComments(path.node);
           },
