@@ -8,6 +8,11 @@
   "keywords": [
     "babel-plugin"
   ],
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-core": "^6.10.4",
