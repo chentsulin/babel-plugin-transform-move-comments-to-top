@@ -19,7 +19,7 @@ $ npm install babel-plugin-transform-move-comments-to-top
 
 ```json
 {
-  plugins: ["transform-move-comments-to-top"]
+  "plugins": ["transform-move-comments-to-top"]
 }
 ```
 
