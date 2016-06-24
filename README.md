@@ -23,6 +23,25 @@ $ npm install babel-plugin-transform-move-comments-to-top
 }
 ```
 
+# Caveats
+
+#### plugins will execute after presets
+
+`transform-move-comments-to-top` may not works when mixing it with other presets and plugins.
+
+```
+{
+  "presets": ["es2015"],
+  "plugins": ["transform-move-comments-to-top"]
+}
+```
+
+A possible solution is doing another transform using `transform-move-comments-to-top`.
+
+```sh
+babel src -d lib && babel lib -d lib --plugins transform-move-comments-to-top
+```
+
 ## License
 
 MIT © [C.T. Lin](https://github.com/chentsulin)
