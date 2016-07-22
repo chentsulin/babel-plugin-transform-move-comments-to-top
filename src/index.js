@@ -1,3 +1,11 @@
+import deepEqual from 'deep-equal';
+
+function deepIncludes(arr, value) {
+  return arr.some(item => {
+    return deepEqual(item, value)
+  });
+}
+
 export default function ({ types: t }) {
   return {
     visitor: {
@@ -7,7 +15,18 @@ export default function ({ types: t }) {
         path.traverse({
           enter(path) {
             if (path.node.leadingComments) {
-              comments = comments.concat(path.node.leadingComments);
+              path.node.leadingComments.forEach(comment => {
+                if (!deepIncludes(comments, comment)) {
+                  comments = comments.concat(comment);
+                }
+              });
+            }
+            if (path.node.trailingComments) {
+              path.node.trailingComments.forEach(comment => {
+                if (!deepIncludes(comments, comment)) {
+                  comments = comments.concat(comment);
+                }
+              });
             }
             t.removeComments(path.node);
           },
